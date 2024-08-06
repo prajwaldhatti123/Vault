@@ -6,7 +6,6 @@ const verifyUser = (req , res) =>{
     if (!email || !password) {
         return res.status(400).send('Email and password are required');
     }
-    console.log(email,password);
     authService.getAdmin(email)
     .then((data)=>{
         if(!data) res.status(404).send("Invalid Email_ID");
